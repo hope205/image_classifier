@@ -26,7 +26,7 @@ class _PhotoPreviewScreenState extends State<PhotoPreviewScreen> {
             gallery: gal,
           );
         },
-        child: Icon(Icons.camera_alt),
+        child: Center(child: Icon(Icons.camera_alt)),
       ),
       body: Center(),
       // Center(
@@ -73,25 +73,4 @@ class _PhotoPreviewScreenState extends State<PhotoPreviewScreen> {
       }),
     );
   }
-
-  // Future getImageLabels(image) async {
-  //   // Future<List<ImageLabel>> getImageLabels(image) async {
-  //   final gotImage = FirebaseVisionImage.fromFile(image);
-  //   final ImageLabeler labelDetector = FirebaseVision.instance.imageLabeler(
-  //     ImageLabelerOptions(confidenceThreshold: 0.75),
-  //   );
-  //   // final labelDetector = FirebaseVision.instance.imageLabeler();
-  //   List<ImageLabel> labels = await labelDetector.processImage(gotImage);
-  //
-  //   for (ImageLabel label in labels) {
-  //     final String text = label.text;
-  //     final String entityId = label.entityId;
-  //     final double confidence = label.confidence;
-  //
-  //     print('this is it : $text');
-  //     print(entityId);
-  //     print(confidence);
-  //   }
-  //
-  // }
 }

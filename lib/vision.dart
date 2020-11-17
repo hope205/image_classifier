@@ -24,18 +24,26 @@ class _ObjectDetectionState extends State<ObjectDetection> {
           child: Column(
             children: [
               Container(
-                child: SizedBox(height: 45.0),
+                child: FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.near_me),
+                ),
+              ),
+              Container(
+                child: Image.file(widget.image),
               ),
               Column(
                 children: [
                   Container(
                     child: FlatButton(
                       child: Text(
-                        'get type',
+                        'Get Name',
                         style: TextStyle(
-                          color: Colors.purple,
-                          fontSize: 30.0,
-                        ),
+                            color: Colors.blue,
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold),
                       ),
                       onPressed: () async {
                         await getImageLabels(widget.image);
@@ -45,21 +53,27 @@ class _ObjectDetectionState extends State<ObjectDetection> {
                   SizedBox(
                     height: 40.0,
                   ),
-                  Text(name),
+                  Text(
+                    name,
+                    style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold),
+                  ),
                   // Text(entityNum),
                   // Text(credibility),
-                  FlatButton(
-                    child: Text(
-                      'Back',
-                      style: TextStyle(
-                        color: Colors.purple,
-                        fontSize: 30.0,
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
+                  // FlatButton(
+                  //   child: Text(
+                  //     'Back',
+                  //     style: TextStyle(
+                  //       color: Colors.purple,
+                  //       fontSize: 30.0,
+                  //     ),
+                  //   ),
+                  //   onPressed: () {
+                  //     Navigator.pop(context);
+                  //   },
+                  // ),
                 ],
               ),
             ],
@@ -70,7 +84,6 @@ class _ObjectDetectionState extends State<ObjectDetection> {
   }
 
   Future getImageLabels(image) async {
-    // Future<List<ImageLabel>> getImageLabels(image) async {
     final gotImage = FirebaseVisionImage.fromFile(image);
     final ImageLabeler labelDetector = FirebaseVision.instance.imageLabeler(
       ImageLabelerOptions(confidenceThreshold: 0.75),
