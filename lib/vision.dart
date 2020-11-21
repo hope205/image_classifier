@@ -60,20 +60,7 @@ class _ObjectDetectionState extends State<ObjectDetection> {
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold),
                   ),
-                  // Text(entityNum),
-                  // Text(credibility),
-                  // FlatButton(
-                  //   child: Text(
-                  //     'Back',
-                  //     style: TextStyle(
-                  //       color: Colors.purple,
-                  //       fontSize: 30.0,
-                  //     ),
-                  //   ),
-                  //   onPressed: () {
-                  //     Navigator.pop(context);
-                  //   },
-                  // ),
+                  
                 ],
               ),
             ],
