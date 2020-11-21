@@ -37,9 +37,9 @@ class _ObjectDetectionState extends State<ObjectDetection> {
               Column(
                 children: [
                   Container(
-                    child: FlatButton(
+                    child: MaterialButton(
                       child: Text(
-                        'Get Name',
+                        'Get Label',
                         style: TextStyle(
                             color: Colors.blue,
                             fontSize: 30.0,
